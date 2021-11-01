@@ -1,0 +1,234 @@
+{% extends 'partials/base.html' %}
+{% block content %}
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row mt-4">
+                                            <div class="col-lg-12">
+                                                <div class="text-center">
+                                                    <h3>About us</h3>
+
+                                                    <div>
+                                                        <button type="button" class="btn btn-primary mt-2 me-2 waves-effect waves-light">Email Us</button>
+                                                        <button type="button" class="btn btn-info mt-2 waves-effect waves-light">Send us a tweet</button>
+                                                    </div>
+                                                    <p></p>
+                                                    <h5 class="text-muted">We offer a range of training services and products, including</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mt-4 justify-content-center">
+                                            <div class="col-lg-10">
+                                                <div>
+                                                    <ul class="nav nav-pills faq-nav-tabs justify-content-center" role="tablist">
+                                                        <li class="nav-item">
+                                                            <a class="nav-link active" data-bs-toggle="pill" href="#faq-gen-ques" role="tab">
+                                                                Customized Training
+                                                            </a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" data-bs-toggle="pill" href="#faq-privacy" role="tab">
+                                                                Design Training
+                                                            </a>
+                                                        </li>
+
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" data-bs-toggle="pill" href="#faq-pricing" role="tab">
+                                                                Rent Services
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+
+                                                    <div class="tab-content pt-5">
+                                                        <div class="tab-pane fade show active" id="faq-gen-ques" role="tabpanel">
+                                                            <div>
+                                                                <div class="text-center mb-5">
+                                                                    <h5>Customized Training</h5>
+                                                                    <p>Customized training for playing basketball</p>
+                                                                </div>
+
+                                                                <div id="gen-question-accordion" class="custom-accordion-arrow">
+                                                                    <div class="card">
+                                                                        <a href="#gen-question-collapseOne" class="text-dark" data-bs-toggle="collapse"
+                                                                                        aria-expanded="true"
+                                                                                        aria-controls="gen-question-collapseOne">
+                                                                            <div class="card-header" id="gen-question-headingOne">
+                                                                                <h5 class="font-size-14 m-0">
+                                                                                    <i class="mdi mdi-chevron-up accor-arrow-icon"></i> What is customized ?
+                                                                                    
+                                                                                </h5>
+                                                                            </div>
+                                                                        </a>
+                                
+                                                                        <div id="gen-question-collapseOne" class="collapse show"
+                                                                                aria-labelledby="gen-question-headingOne" data-bs-parent="#gen-question-accordion">
+                                                                            <div class="card-body">
+                                                                                You can decide when and where to start each training, we will arrange coach to reach you.
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="card">
+                                                                        <a href="#gen-question-collapseTwo" class="collapsed" data-bs-toggle="collapse"
+                                                                                        aria-expanded="false"
+                                                                                        aria-controls="gen-question-collapseTwo">
+                                                                            <div class="card-header" id="gen-question-headingTwo">
+                                                                                <h5 class="font-size-14 m-0">
+                                                                                    <i class="mdi mdi-chevron-up accor-arrow-icon"></i> Why do we need it ?
+                                                                                </h5>
+                                                                            </div>
+                                                                        </a>
+                                                                        <div id="gen-question-collapseTwo" class="collapse" aria-labelledby="gen-question-headingTwo"
+                                                                                data-bs-parent="#gen-question-accordion">
+                                                                            <div class="card-body">
+                                                                                You can arrange your life more easily without worrying about the class arrangement.
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="card">
+                                                                        <a href="#gen-question-collapseThree" class="collapsed" data-bs-toggle="collapse"
+                                                                                        aria-expanded="false"
+                                                                                        aria-controls="gen-question-collapseThree">
+                                                                            <div class="card-header" id="gen-question-headingThree">
+                                                                                <h5 class="font-size-14 m-0">
+                                                                                    <i class="mdi mdi-chevron-up accor-arrow-icon"></i> Can the training be cancelled or given to others ?
+                                                                                </h5>
+                                                                            </div>
+                                                                        </a>
+                                                                        <div id="gen-question-collapseThree" class="collapse"
+                                                                                aria-labelledby="gen-question-headingThree" data-bs-parent="#gen-question-accordion">
+                                                                            <div class="card-body">
+                                                                                Of course it can do both. But we suggest you not do so, since the training is designed for yourself at the beginning.
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tab-pane fade" id="faq-privacy" role="tabpanel">
+                                                            <div>
+                                                                <div class="text-center mb-5">
+                                                                    <h5>Design Training</h5>
+                                                                    <p>Training for origami design</p>
+                                                                </div>
+
+                                                                <div id="privacy-accordion" class="custom-accordion-arrow">
+                                                                        
+                                                                    <div class="card">
+                                                                        <a href="#privacy-collapseOne" class="collapsed" data-bs-toggle="collapse"
+                                                                                        aria-expanded="false"
+                                                                                        aria-controls="privacy-collapseOne">
+                                                                            <div class="card-header" id="privacy-headingOne">
+                                                                                <h5 class="font-size-14 m-0">
+                                                                                    <i class="mdi mdi-chevron-up accor-arrow-icon"></i> Why do we use it ?
+                                                                                </h5>
+                                                                            </div>
+                                                                        </a>
+                                                                        <div id="privacy-collapseOne" class="collapse" aria-labelledby="privacy-headingOne"
+                                                                                data-bs-parent="#privacy-accordion">
+                                                                            <div class="card-body">
+                                                                                You can realize your dream to be professional designer or start your hobby here.
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="card">
+                                                                        <a href="#privacy-collapseTwo" class="text-dark" data-bs-toggle="collapse"
+                                                                                        aria-expanded="true"
+                                                                                        aria-controls="privacy-collapseTwo">
+                                                                            <div class="card-header" id="privacy-headingTwo">
+                                                                                <h5 class="font-size-14 m-0">
+                                                                                    <i class="mdi mdi-chevron-up accor-arrow-icon"></i> What is price ?
+                                                                                </h5>
+                                                                            </div>
+                                                                        </a>
+                                
+                                                                        <div id="privacy-collapseTwo" class="collapse show"
+                                                                                aria-labelledby="privacy-headingOne" data-bs-parent="#privacy-accordion">
+                                                                            <div class="card-body">
+                                                                                For different customer with different initial skill in terms of specific areas, we have various price for different training project, including the free version.
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="tab-pane fade" id="faq-pricing" role="tabpanel">
+                                                            <div>
+                                                                <div class="text-center mb-5">
+                                                                    <h5>Rent Services</h5>
+                                                                    <p>Rent movies and TV-drama series</p>
+                                                                </div>
+
+                                                                <div id="pricing-accordion" class="custom-accordion-arrow">
+                                                                        
+                                                                    <div class="card">
+                                                                        <a href="#pricing-collapseOne" class="text-dark" data-bs-toggle="collapse"
+                                                                                        aria-expanded="true"
+                                                                                        aria-controls="pricing-collapseOne">
+                                                                            <div class="card-header" id="pricing-headingOne">
+                                                                                <h5 class="font-size-14 m-0">
+                                                                                    <i class="mdi mdi-chevron-up accor-arrow-icon"></i> Can I enjoy movies for free ?
+                                                                                </h5>
+                                                                            </div>
+                                                                        </a>
+                                
+                                                                        <div id="pricing-collapseOne" class="collapse show"
+                                                                                aria-labelledby="pricing-headingOne" data-bs-parent="#pricing-accordion">
+                                                                            <div class="card-body">
+                                                                                Definitely you can!
+                                                                                You can try a few minutes for each film and Also you have two days as temporary professional user when you finish your registration for the first time.
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="card">
+                                                                        <a href="#pricing-collapseTwo" class="collapsed" data-bs-toggle="collapse"
+                                                                                        aria-expanded="false"
+                                                                                        aria-controls="pricing-collapseTwo">
+                                                                            <div class="card-header" id="pricing-headingTwo">
+                                                                                <h5 class="font-size-14 m-0">
+                                                                                    <i class="mdi mdi-chevron-up accor-arrow-icon"></i> Can not find interested movies ?
+                                                                                </h5>
+                                                                            </div>
+                                                                        </a>
+                                                                        <div id="pricing-collapseTwo" class="collapse"
+                                                                                aria-labelledby="pricing-headingTwo" data-bs-parent="#pricing-accordion">
+                                                                            <div class="card-body">
+                                                                                We are sorry to hear about that, you can post a request or email us to let us know. We will handle it as soon as possible.
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="card">
+                                                                        <a href="#pricing-collapseThree" class="collapsed" data-bs-toggle="collapse"
+                                                                                        aria-expanded="false"
+                                                                                        aria-controls="pricing-collapseThree">
+                                                                            <div class="card-header" id="pricing-headingThree">
+                                                                                <h5 class="font-size-14 m-0">
+                                                                                    <i class="mdi mdi-chevron-up accor-arrow-icon"></i> Why do we use it ?
+                                                                                </h5>
+                                                                            </div>
+                                                                        </a>
+                                                                        <div id="pricing-collapseThree" class="collapse" aria-labelledby="pricing-headingThree"
+                                                                                data-bs-parent="#pricing-accordion">
+                                                                            <div class="card-body">
+                                                                                You can choose either to be our professional user or to only rent movies you are interested in.
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+{% endblock content %}

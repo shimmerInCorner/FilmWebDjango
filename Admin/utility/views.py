@@ -38,9 +38,9 @@ class TimelineView(View):
 class FaqsView(View):
     def get(self,request):
         greeting = {}
-        greeting['title'] = "FAQs"
-        greeting['pageview'] = "Utility"
-        return render(request,'pages/utility/pages-faqs.html',greeting)
+        greeting['title'] = "About"
+        greeting['pageview'] = "OnlineMovie"
+        return render(request, 'pages/pages-faqs.html', greeting)
 
 # Pricing
 class PricingView(View):

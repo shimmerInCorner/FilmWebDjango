@@ -1,8 +1,4 @@
 /*
-Template Name: Nazox -  Admin & Dashboard Template
-Author: Themesdesign
-Version: 2.0.0
-更多精品模板：http://www.bootstrapmb.com
 File: Main Js File
 */
 (function ($) {

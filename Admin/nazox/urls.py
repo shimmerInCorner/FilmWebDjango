@@ -29,7 +29,7 @@ urlpatterns = [
     path('ecommerce/',include('ecommerce.urls')),# Ecommerce
     path('email/',include('mail.urls')),# Email
     path('layouts/',include('layouts.urls')),# Layout
-    path('pages/',include('utility.urls')),# Utility
+    path('',include('utility.urls')),# Utility
     path('components/',include('components.urls')),# Components
     path('authentication/',include('authentication.urls')),# Authentication
     
