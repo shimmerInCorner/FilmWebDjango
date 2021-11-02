@@ -77,14 +77,14 @@ class RegisterView(View):
                 elif(password == password1):
                     form = UserRegistrationForm(request.POST)
                     if form.is_valid():
-                        subject = "Welcome to Nazox  Membership"
+                        subject = "Welcome to OnlineMovie Membership"
                         email_template_name = "pages/authentication/register-email.txt"
                         c = {
                             'username': username,
                             'password': password
                         }
                         email_1 = render_to_string(email_template_name, c)
-                        send_mail(subject, email_1, 'nazox@nazox.com',
+                        send_mail(subject, email_1, 'onlinemoive@onlinemoive.com',
                                 [email], fail_silently=False)
                         user = User.objects.create_user(username=username, email=email, password=password)
                         user.save()
@@ -157,22 +157,6 @@ class RecoverPasswordView(View):
                     return redirect('auth-recoverpw')
         else:
             return render(request, self.template_name, {'form': RecoverPasswordForm})
-
-
-#  Confirm Mail
-class ConfirmmailView(View):
-    def get(self, request):
-        return render(request, 'pages/authentication/auth-confirm-mail.html')
-
-#  Email Verification
-class EmailVerificationView(View):
-    def get(self, request):
-        return render(request, 'pages/authentication/auth-email-verification.html')
-
-#  Two Step Verification
-class TwoStepVerificationView(View):
-    def get(self, request):
-        return render(request, 'pages/authentication/auth-two-step-verification.html')
 
 
 # Lock-Screen
