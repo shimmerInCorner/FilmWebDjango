@@ -1,4 +1,4 @@
-OnlineMoive Installation in Django Python
+OnlineMovie Installation in Django Python
 
 >>>Installation Python
  ->https://www.python.org/downloads/
@@ -115,39 +115,39 @@ Linux:-Install Package:-pip3 install Django-Verify-Email
 <!--=================================================================================================================================================-->
                                                             <!--Vertical Layout View-->
 <!--=================================================================================================================================================-->
-Step - 1 -> Goto OnlineMoive\templates\partials\base.html
+Step - 1 -> Goto OnlineMovie\templates\partials\base.html
 Step - 2 -> add attribute into the body tag [data-sidebar="dark"]
 		Example -> <body data-sidebar="dark"">
 Step - 3 -> Comment this code {% include 'partials/hori-header.html' %} and {% include 'partials/hori-sidebar.html' %}
 Step - 4 -> Uncomment this code {% include 'partials/header.html' %} and {% include 'partials/sidebar.html' %}
 
 						<!-- (Light Sidebar) -->
-Step - 1 -> Goto OnlineMoive\templates\partials\base.html
+Step - 1 -> Goto OnlineMovie\templates\partials\base.html
 Step - 2 -> Add data attribute data-topbar="dark" body element to have light sidebar.
             Example -> <body data-sidebar="dark"">
 
 						<!-- (Dark Sidebar) -->
-Step - 1 -> Goto OnlineMoive\templates\partials\base.html
+Step - 1 -> Goto OnlineMovie\templates\partials\base.html
 Step - 2 -> Add data attribute data-sidebar="dark" body element to have dark sidebar.
             Example -> <body data-sidebar="dark">
 
 						<!-- (Colored Sidebar) -->
-Step - 1 -> Goto OnlineMoive\templates\partials\base.html
+Step - 1 -> Goto OnlineMovie\templates\partials\base.html
 Step - 2 -> Add data attribute data-sidebar="colored" body element to have colored sidebar.
             Example -> <body data-sidebar="colored">
 
 						<!-- (Compact Sidebar) -->
-Step - 1 -> Goto OnlineMoive\templates\partials\base.html
+Step - 1 -> Goto OnlineMovie\templates\partials\base.html
 Step - 2 -> Add data attribute data-sidebar="dark" data-sidebar-size="small" body element to have Compact sidebar.
             Example -> <body data-sidebar="dark" data-sidebar-size="small">
 
 						<!-- (Icon Sidebar) -->
-Step - 1 -> Goto OnlineMoive\templates\partials\base.html
+Step - 1 -> Goto OnlineMovie\templates\partials\base.html
 Step - 2 -> Add data attribute data-sidebar="dark" data-keep-enlarged="true" class="vertical-collpsed" body element to have Icon sidebar.
 
 
 						<!-- (Boxed Layout) -->
-Step - 1 -> Goto OnlineMoive\templates\partials\base.html
+Step - 1 -> Goto OnlineMovie\templates\partials\base.html
 Step - 2 -> Add data attribute  data-sidebar="dark" data-keep-enlarged="true" class="vertical-collpsed" data-layout-size="boxed"  body element to have boxed layout.
             Example -> <body data-sidebar="dark" data-keep-enlarged="true" class="vertical-collpsed" data-layout-size="boxed">
 
@@ -157,24 +157,24 @@ Step - 2 -> Add data attribute  data-sidebar="dark" data-keep-enlarged="true" cl
 <!--=================================================================================================================================================-->
                                                             <!--Horizontal Body View-->
 <!--=================================================================================================================================================-->
-Step - 1 -> Goto OnlineMoive\templates\partials\base.html
+Step - 1 -> Goto OnlineMovie\templates\partials\base.html
 Step - 2 -> Add attribute into the body tag [data-topbar="dark" data-layout="horizontal"]
 		Example -> <body data-topbar="dark" data-layout="horizontal">
 Step - 3 -> Comment this code {% include 'partials/header.html' %} and {% include 'partials/sidebar.html' %}
 Step - 4 -> Uncomment this code {% include 'partials/hori-header.html' %} and {% include 'partials/hori-sidebar.html' %}
 
 						<!-- (Topbar Light) -->
-Step - 1 -> Goto OnlineMoive\templates\partials\base.html
+Step - 1 -> Goto OnlineMovie\templates\partials\base.html
 Step - 2 -> Add data attribute data-topbar="light" data-layout="horizontal"  body element to have light topbar and dark menubar.
             Example -> <body data-topbar="light" data-layout="horizontal">
 
 						<!-- (Colored Topbar) -->
-Step - 1 -> Goto OnlineMoive\templates\partials\base.html
+Step - 1 -> Goto OnlineMovie\templates\partials\base.html
 Step - 2 -> Add data attribute data-topbar="colored" data-layout="horizontal"  body element to have light topbar and dark menubar.
             Example -> <body data-topbar="colored" data-layout="horizontal">
 
 						<!-- (Boxed Layout) -->
-Step - 1 -> Goto OnlineMoive\templates\partials\base.html
+Step - 1 -> Goto OnlineMovie\templates\partials\base.html
 Step - 2 -> Add data attribute  data-topbar="dark" data-layout="horizontal" data-layout-size="boxed"  body element to have boxed layout.
             Example -> <body data-topbar="dark" data-layout="horizontal" data-layout-size="boxed">
 
@@ -185,20 +185,20 @@ Step - 2 -> Add data attribute  data-topbar="dark" data-layout="horizontal" data
                                                             <!--light/dark/RTL Mode-->
 <!--=================================================================================================================================================-->
 			<!--- Dark Mode --->
-Step - 1 -> Goto OnlineMoive\templates\partials\base.html
+Step - 1 -> Goto OnlineMovie\templates\partials\base.html
 Step - 2 -> Add attribute into the body tag [data-topbar="dark" data-layout-mode="dark" data-sidebar="dark" ] 
 		Example -> <body data-topbar="dark" data-layout-mode="dark" data-sidebar="dark">
 
 			<!--- Light Mode --->
-Step - 1 -> Goto OnlineMoive\templates\partials\base.html
+Step - 1 -> Goto OnlineMovie\templates\partials\base.html
 Step - 2 -> Add attribute into the body tag [data-layout-mode="light"] 
 		Example -> <body data-layout-mode="light" >
 
 			<!--- RTL Mode --->
-Step - 1 -> Goto OnlineMoive\templates\partials\base.html
+Step - 1 -> Goto OnlineMovie\templates\partials\base.html
 Step - 2 -> Add attribute into the HTML tag [lang="en" dir="rtl"] 
 		Example -> <html lang="en" dir="rtl" >
-Step - 3 -> Go to OnlineMoive/static/js/app.js
+Step - 3 -> Go to OnlineMovie/static/js/app.js
             Go to line number 176 and add [alreadyVisited = "rtl-mode-switch";]
 
 <!--=================================================================================================================================================-->
@@ -208,7 +208,7 @@ Step - 3 -> Go to OnlineMoive/static/js/app.js
                                                             <!-- Preloader -->
 <!--=================================================================================================================================================-->
 			<!--- Fluid --->
-Step - 1 -> Goto OnlineMoive\templates\partials\base.html
+Step - 1 -> Goto OnlineMovie\templates\partials\base.html
 Step - 2 -> Preloader block in uncomment this code {% include 'partials/preloader.html' %} 
 <!--=================================================================================================================================================-->
 

@@ -9,7 +9,7 @@ class DashboardView(LoginRequiredMixin,View):
         print(request.session)
         greeting = {}
         greeting['title'] = "Dashboard"
-        greeting['pageview'] = "OnlineMoive"        
+        greeting['pageview'] = "OnlineMovie"        
         return render(request, 'menu/index.html',greeting)
 
 # Calender
@@ -17,7 +17,7 @@ class CalendarView(LoginRequiredMixin,View):
     def get(self, request):
         greeting = {}
         greeting['title'] = "Calendar"
-        greeting['pageview'] = "OnlineMoive"        
+        greeting['pageview'] = "OnlineMovie"        
         return render(request, 'menu/calendar.html',greeting)
 
 # Chat
@@ -25,7 +25,7 @@ class ChatView(LoginRequiredMixin,View):
     def get(self, request):
         greeting = {}
         greeting['title'] = "Chat"
-        greeting['pageview'] = "OnlineMoive"        
+        greeting['pageview'] = "OnlineMovie"        
         return render(request, 'menu/apps-chat.html',greeting)
 
 # Kanban Board
@@ -33,5 +33,5 @@ class KanbanBoardView(LoginRequiredMixin,View):
     def get(self, request):
         greeting = {}
         greeting['title'] = "Kanban Board"
-        greeting['pageview'] = "OnlineMoive"        
+        greeting['pageview'] = "OnlineMovie"        
         return render(request, 'menu/apps-kanban-board.html',greeting)
