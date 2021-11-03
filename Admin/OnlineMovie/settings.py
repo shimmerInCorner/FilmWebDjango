@@ -141,9 +141,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'gaurav.themesbrand@gmail.com'
+EMAIL_HOST_USER = 'shimmeradan@gmail.com'
 EMAIL_HOST_PASSWORD = 'zyozlhaemqstrjuj'
-DEFAULT_FROM_EMAIL = 'gaurav.themesbrand@gmail.com'
+DEFAULT_FROM_EMAIL = 'shimmeradan@gmail.com'
 
 
 LOGIN_URL = 'auth-login'
@@ -153,7 +153,7 @@ LOGIN_REDIRECT_URL = 'auth-login'
 # LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-SESSION_EXPIRE_SECONDS = 90  # 3 minute
+SESSION_EXPIRE_SECONDS = 900  # 3 minute
 SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
 SESSION_EXPIRE_AFTER_LAST_ACTIVITY_GRACE_PERIOD = 1 # group by minute 
 SESSION_TIMEOUT_REDIRECT = 'auth-lock-screen'

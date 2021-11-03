@@ -21,12 +21,8 @@ from OnlineMovie import views
 urlpatterns = [
     # Menu    
     path('',views.DashboardView.as_view(),name='dashboard'),# Dashboard
-    path('menu/calendar',views.CalendarView.as_view(),name='calendar'),# Calender
-    path('menu/chat',views.ChatView.as_view(),name='chat'),# Chat
-    path('menu/app-kanban-board',views.KanbanBoardView.as_view(),name='app-kanban-board'),# Kanban Board
-
     # Apps
-    path('ecommerce/',include('ecommerce.urls')),# Ecommerce
+    path('about-us/',include('ecommerce.urls')),# Ecommerce
     path('',include('utility.urls')),# Utility
     path('authentication/',include('authentication.urls')),# Authentication
 
