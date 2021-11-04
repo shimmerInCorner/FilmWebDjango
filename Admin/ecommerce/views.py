@@ -4,9 +4,30 @@ from django.views import View
 from .models import Movie
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage, InvalidPage
+from django.views.decorators.csrf import csrf_exempt
 
-
+@csrf_exempt
 def movie_page(request):
+
+    all_movies = Movie.objects.all()  # select all movies in database
+
+    paginator = Paginator(all_movies, 8)
+
+    if request.method == "GET":
+        page = request.GET.get('page')
+        try:
+            movies = paginator.page(page)
+        except PageNotAnInteger:
+            movies = paginator.page(1)
+        except InvalidPage:
+            return HttpResponse('404')
+        except EmptyPage:
+            movies = paginator.page(paginator.num_pages)
+
+    return render(request,'menu/ecommerce/ecommerce-customers.html',{'movies':movies})
+
+@csrf_exempt
+def movie_list_home(request):
 
     all_movies = Movie.objects.all()  # select all movies in database
 
@@ -25,15 +46,16 @@ def movie_page(request):
 
     return render(request,'menu/ecommerce/ecommerce-products.html',{'movies':movies})
 
-
+@csrf_exempt
 def delete(request):
     delete_id = request.GET.get('id')
 
     Movie.objects.filter(id=delete_id).delete()
 
-    return HttpResponseRedirect('/about-us/management')
+    return HttpResponseRedirect('/about-us/movie_manage')
 
-def select(request):
+@csrf_exempt
+def select_tp(request):
     select_type = request.GET.get('type')
     all_movies = Movie.objects.filter(type__icontains=select_type)
     paginator = Paginator(all_movies, 8)
@@ -50,6 +72,25 @@ def select(request):
 
     return render(request,'menu/ecommerce/ecommerce-products.html',{'movies':movies})
 
+@csrf_exempt
+def select_ct(request):
+    select_country = request.GET.get('country')
+    all_movies = Movie.objects.filter(type__icontains=select_country)
+    paginator = Paginator(all_movies, 8)
+    if request.method == "GET":
+        page = request.GET.get('page')
+        try:
+            movies = paginator.page(page)
+        except PageNotAnInteger:
+            movies = paginator.page(1)
+        except InvalidPage:
+            return HttpResponse('404')
+        except EmptyPage:
+            movies = paginator.page(paginator.num_pages)
+
+    return render(request,'menu/ecommerce/ecommerce-products.html',{'movies':movies})
+
+@csrf_exempt
 def add(request):
     # if request.method == "GET":
     #    return HttpResponseRedirect('/about/movie')
@@ -57,12 +98,14 @@ def add(request):
     if request.method == 'POST':
         new_item = request.POST
         print(new_item)
-        Movie.objects.create(name=new_item['name'],img_url=new_item['img_url'],
+        Movie.objects.create(name=new_item['movie_name'],img_url=new_item['img_url'],
                              duration=new_item['duration'],grade=new_item['grade'],
-                             type=new_item['type'],watch_url=new_item['watch_url'],
-                             price=new_item['price'])
+                             type=new_item['category'],watch_url=new_item['watch_url'],
+                             price=new_item['price'],features=new_item['features'],
+                             description=new_item['productdesc'],meta_description=new_item['metadescription'],
+                             country=new_item['country'],)
 
-        return HttpResponseRedirect('/about-us/management')
+        return HttpResponseRedirect('/about-us/movie_manage')
 
 def search(request):
     global search_item
@@ -88,32 +131,32 @@ def search(request):
 class ProductsView(LoginRequiredMixin,View):
     def get(self, request):
         greeting = {}
-        greeting['title'] = "Products"
-        greeting['pageview'] = "Ecommerce"        
+        greeting['title'] = "Movies"
+        greeting['pageview'] = "Services"
         return render(request, 'menu/ecommerce/ecommerce-products.html',greeting)
 
 # Product Details
 class ProductDetailsView(LoginRequiredMixin,View):
     def get(self, request):
         greeting = {}
-        greeting['title'] = "Product Detail"
-        greeting['pageview'] = "Ecommerce"        
+        greeting['title'] = "Movie Detail"
+        greeting['pageview'] = "Services"
         return render(request, 'menu/ecommerce/ecommerce-product-detail.html',greeting)
 
 # Orders
 class OrdersView(LoginRequiredMixin,View):
     def get(self, request):
         greeting = {}
-        greeting['title'] = "Orders"
-        greeting['pageview'] = "Ecommerce"        
+        greeting['title'] = "Movies"
+        greeting['pageview'] = "Services"
         return render(request, 'menu/ecommerce/ecommerce-orders.html',greeting)
 
 # Customers
 class CustomersView(LoginRequiredMixin,View):
     def get(self, request):
         greeting = {}
-        greeting['title'] = "Customers"
-        greeting['pageview'] = "Ecommerce"        
+        greeting['title'] = "Movies Management"
+        greeting['pageview'] = "Services"
         return render(request, 'menu/ecommerce/ecommerce-customers.html',greeting)
 
 # Cart
@@ -144,6 +187,6 @@ class ShopsView(LoginRequiredMixin,View):
 class AddProductView(LoginRequiredMixin,View):
     def get(self, request):
         greeting = {}
-        greeting['title'] = "Add Product"
-        greeting['pageview'] = "Ecommerce"        
+        greeting['title'] = "Add Movie"
+        greeting['pageview'] = "Services"
         return render(request, 'menu/ecommerce/ecommerce-add-product.html',greeting)

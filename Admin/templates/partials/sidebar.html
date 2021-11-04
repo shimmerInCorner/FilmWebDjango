@@ -17,13 +17,14 @@
 
 						<li>
 							<a href="javascript: void(0);" class="has-arrow waves-effect"> <i class="ri-store-2-line"></i>
-								<span key="t-ecommerce">Ecommerce</span>
+								<span key="t-ecommerce">Services</span>
 							</a>
 							<ul class="sub-menu" aria-expanded="false">
-								<li><a href="{% url 'ecommerce-products' %}"key="t-products">Movies</a>
+								<li><a href="/about-us/movies" key="t-products">Movies</a>
 								</li>
 								<li><a href="{% url 'ecommerce-product-detail' %}"key="t-product-detail">Movie Detail</a>
-								<li><a href="{% url 'ecommerce-customers' %}"key="t-customers">Movies Management</a>
+{#								<li><a href="{% url 'ecommerce-customers' %}"key="t-customers">Movies Management</a>#}
+                                <li><a href="/about-us/movie_manage" key="t-customers">Movies Management</a>
 								</li>
 								<li><a href="{% url 'ecommerce-add-product' %}"key="t-add-product">Add Product</a>
 								</li>

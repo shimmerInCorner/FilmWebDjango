@@ -5,14 +5,14 @@
 				<div class="d-flex">
 					<!-- LOGO -->
 					<div class="navbar-brand-box">
-						<a href="{% url 'dashboard' %}" class="logo logo-dark"> <span class="logo-sm">
+						<a href="{% url 'pages-faqs' %}" class="logo logo-dark"> <span class="logo-sm">
                                     <img src="{% static 'images/logo-sm-dark.png' %}" alt="logo-sm-dark" height="22">
                                 </span>
 							<span class="logo-lg">
                                     <img src="{% static 'images/logo-dark.png' %}" alt="logo-dark" height="20">
                                 </span>
 						</a>
-						<a href="{% url 'dashboard' %}" class="logo logo-light"> <span class="logo-sm">
+						<a href="{% url 'pages-faqs' %}" class="logo logo-light"> <span class="logo-sm">
                                     <img src="{% static 'images/logo-sm-light.png' %}" alt="logo-sm-light" height="22">
                                 </span>
 							<span class="logo-lg">
@@ -28,50 +28,15 @@
 							<input type="text" class="form-control" placeholder="Search..."> <span class="ri-search-line"></span>
 						</div>
 					</form>
-					<div class="dropdown dropdown-mega d-none d-lg-block ms-2">
+					<div class="dropdown dropdown-mega d-none d-lg-block ms-3">
 						<button type="button" class="btn header-item waves-effect" data-bs-toggle="dropdown" aria-haspopup="false" aria-expanded="false" key="t-megamenu">Mega Menu <i class="mdi mdi-chevron-down"></i> 
 						</button>
 						<div class="dropdown-menu dropdown-megamenu">
 							<div class="row">
-								<div class="col-sm-8">
+								<div class="col-sm-3">
 									<div class="row">
-										<div class="col-md-4">
-											<h5 class="font-size-14">UI Components</h5>
-											<ul class="list-unstyled megamenu-list">
-												<li> <a href="javascript:void(0);">Lightbox</a>
-												</li>
-												<li> <a href="javascript:void(0);">Range Slider</a>
-												</li>
-												<li> <a href="javascript:void(0);">Sweet Alert</a>
-												</li>
-												<li> <a href="javascript:void(0);">Rating</a>
-												</li>
-												<li> <a href="javascript:void(0);">Forms</a>
-												</li>
-												<li> <a href="javascript:void(0);">Tables</a>
-												</li>
-												<li> <a href="javascript:void(0);">Charts</a>
-												</li>
-											</ul>
-										</div>
-										<div class="col-md-4">
-											<h5 class="font-size-14">Applications</h5>
-											<ul class="list-unstyled megamenu-list">
-												<li> <a href="javascript:void(0);">Ecommerce</a>
-												</li>
-												<li> <a href="javascript:void(0);">Calendar</a>
-												</li>
-												<li> <a href="javascript:void(0);">Email</a>
-												</li>
-												<li> <a href="javascript:void(0);">Projects</a>
-												</li>
-												<li> <a href="javascript:void(0);">Tasks</a>
-												</li>
-												<li> <a href="javascript:void(0);">Contacts</a>
-												</li>
-											</ul>
-										</div>
-										<div class="col-md-4">
+
+										<div class="col-md-2">
 											<h5 class="font-size-14">Extra Pages</h5>
 											<ul class="list-unstyled megamenu-list">
 												<li> <a href="javascript:void(0);">Light Sidebar</a>
@@ -92,9 +57,9 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-4">
+								<div class="col-sm-2">
 									<div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-2">
 											<h5 class="font-size-14">UI Components</h5>
 											<ul class="list-unstyled megamenu-list">
 												<li> <a href="javascript:void(0);">Lightbox</a>
@@ -113,13 +78,14 @@
 												</li>
 											</ul>
 										</div>
-										<div class="col-sm-5">
-											<div>
-												<img src="{% static 'images/megamenu-img.png' %}" alt="megamenu-img" class="img-fluid mx-auto d-block">
-											</div>
-										</div>
+
 									</div>
 								</div>
+                                <div class="col-sm-2">
+                                    <div>
+                                        <img src="{% static 'images/megamenu-img.png' %}" alt="megamenu-img" class="img-fluid mx-auto d-block">
+                                    </div>
+                                </div>
 							</div>
 						</div>
 					</div>
@@ -185,7 +151,7 @@
 							<div class="px-lg-2">
 								<div class="row g-0">
 									<div class="col">
-										<a class="dropdown-icon-item" href="#">
+										<a class="dropdown-icon-item" href="https://github.com/shimmerInCorner/FilmWebDjango" target="_blank">
 											<img src="{% static 'images/brands/github.png' %}" alt="Github"> <span>GitHub</span>
 										</a>
 									</div>
@@ -196,27 +162,11 @@
 									</div>
 									<div class="col">
 										<a class="dropdown-icon-item" href="#">
-											<img src="{% static 'images/brands/dribbble.png' %}" alt="dribbble"> <span>Dribbble</span>
-										</a>
-									</div>
-								</div>
-								<div class="row g-0">
-									<div class="col">
-										<a class="dropdown-icon-item" href="#">
 											<img src="{% static 'images/brands/dropbox.png' %}" alt="dropbox"> <span>Dropbox</span>
 										</a>
 									</div>
-									<div class="col">
-										<a class="dropdown-icon-item" href="#">
-											<img src="{% static 'images/brands/mail_chimp.png' %}" alt="mail_chimp"> <span>Mail Chimp</span>
-										</a>
-									</div>
-									<div class="col">
-										<a class="dropdown-icon-item" href="#">
-											<img src="{% static 'images/brands/slack.png' %}" alt="slack"> <span>Slack</span>
-										</a>
-									</div>
 								</div>
+
 							</div>
 						</div>
 					</div>

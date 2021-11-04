@@ -19,7 +19,7 @@ class LoginView(View):
     username = [];
     def get(self,request):
         if 'username' in request.session:
-            return redirect('dashboard')
+            return redirect('pages-faqs')
         else:
             greeting={}
             greeting['form'] = UserLoginForm
@@ -178,7 +178,7 @@ class LockScreenView(LoginView,View):
                 username = self.username[0]
 
                 p_len =len(username)
-                if(p_len<6):
+                if(p_len>6):
                     user = auth.authenticate(username=username, password=password)
                     if user is not None:    
                         request.session['username'] = username

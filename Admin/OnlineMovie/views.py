@@ -11,27 +11,4 @@ class DashboardView(LoginRequiredMixin,View):
         greeting['title'] = "Dashboard"
         greeting['pageview'] = "OnlineMovie"        
         return render(request, 'menu/index.html',greeting)
-
-# Calender
-class CalendarView(LoginRequiredMixin,View):
-    def get(self, request):
-        greeting = {}
-        greeting['title'] = "Calendar"
-        greeting['pageview'] = "OnlineMovie"        
-        return render(request, 'menu/calendar.html',greeting)
-
-# Chat
-class ChatView(LoginRequiredMixin,View):
-    def get(self, request):
-        greeting = {}
-        greeting['title'] = "Chat"
-        greeting['pageview'] = "OnlineMovie"        
-        return render(request, 'menu/apps-chat.html',greeting)
-
-# Kanban Board
-class KanbanBoardView(LoginRequiredMixin,View):
-    def get(self, request):
-        greeting = {}
-        greeting['title'] = "Kanban Board"
-        greeting['pageview'] = "OnlineMovie"        
-        return render(request, 'menu/apps-kanban-board.html',greeting)
+        # return render(request, 'pages/pages-faqs.html', greeting)
