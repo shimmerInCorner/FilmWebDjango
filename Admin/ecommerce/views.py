@@ -93,7 +93,7 @@ def select_tp(request):
 @csrf_exempt
 def select_ct(request):
     select_country = request.GET.get('country')
-    all_movies = Movie.objects.filter(type__icontains=select_country)
+    all_movies = Movie.objects.filter(country__icontains=select_country)
     paginator = Paginator(all_movies, 8)
     if request.method == "GET":
         page = request.GET.get('page')
