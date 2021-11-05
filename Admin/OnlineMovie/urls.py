@@ -17,9 +17,10 @@ from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
 from OnlineMovie import views
+from utility.views import FaqsView
 
 urlpatterns = [
-    # Menu    
+    # Menu
     path('',views.DashboardView.as_view(),name='dashboard'),# Dashboard
     # Apps
     path('about-us/',include('ecommerce.urls')),# Ecommerce

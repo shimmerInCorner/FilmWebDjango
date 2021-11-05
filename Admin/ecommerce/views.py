@@ -55,6 +55,24 @@ def delete(request):
     return HttpResponseRedirect('/about-us/movie_manage')
 
 @csrf_exempt
+def select(request):
+    select_id = request.GET.get('id')
+    all_movies = Movie.objects.filter(id=select_id)
+    paginator = Paginator(all_movies, 8)
+    if request.method == "GET":
+        page = request.GET.get('page')
+        try:
+            movies = paginator.page(page)
+        except PageNotAnInteger:
+            movies = paginator.page(1)
+        except InvalidPage:
+            return HttpResponse('404')
+        except EmptyPage:
+            movies = paginator.page(paginator.num_pages)
+
+    return render(request,'menu/ecommerce/ecommerce-products.html',{'movies':movies})
+
+@csrf_exempt
 def select_tp(request):
     select_type = request.GET.get('type')
     all_movies = Movie.objects.filter(type__icontains=select_type)
@@ -91,6 +109,25 @@ def select_ct(request):
     return render(request,'menu/ecommerce/ecommerce-products.html',{'movies':movies})
 
 @csrf_exempt
+def select_prc(request):
+    select_minPrice = request.GET.get('minPrice')
+    select_maxPrice = request.GET.get('maxPrice')
+    all_movies = Movie.objects.filter(price__range=(select_minPrice, select_maxPrice))
+    paginator = Paginator(all_movies, 8)
+    if request.method == "GET":
+        page = request.GET.get('page')
+        try:
+            movies = paginator.page(page)
+        except PageNotAnInteger:
+            movies = paginator.page(1)
+        except InvalidPage:
+            return HttpResponse('404')
+        except EmptyPage:
+            movies = paginator.page(paginator.num_pages)
+
+    return render(request,'menu/ecommerce/ecommerce-products.html',{'movies':movies})
+
+@csrf_exempt
 def add(request):
     # if request.method == "GET":
     #    return HttpResponseRedirect('/about/movie')
@@ -108,25 +145,22 @@ def add(request):
         return HttpResponseRedirect('/about-us/movie_manage')
 
 def search(request):
-    global search_item
-
-    if request.method=='POST':
-        search_item = request.POST['movie_name']
-
-    all_movies = Movie.objects.filter(name__icontains=search_item)
+    movie_name = request.GET.get('movie_name')
+    all_movies = Movie.objects.filter(name__icontains=movie_name)
     paginator = Paginator(all_movies, 8)
-
-    page = request.GET.get('page')
-    try:
-        movies = paginator.page(page)
-    except PageNotAnInteger:
-        movies = paginator.page(1)
-    except InvalidPage:
-        return HttpResponse('404')
-    except EmptyPage:
-        movies = paginator.page(paginator.num_pages)
+    if request.method == "GET":
+        page = request.GET.get('page')
+        try:
+            movies = paginator.page(page)
+        except PageNotAnInteger:
+            movies = paginator.page(1)
+        except InvalidPage:
+            return HttpResponse('404')
+        except EmptyPage:
+            movies = paginator.page(paginator.num_pages)
 
     return render(request, 'menu/ecommerce/ecommerce-products.html', {'movies': movies})
+
 # Products
 class ProductsView(LoginRequiredMixin,View):
     def get(self, request):

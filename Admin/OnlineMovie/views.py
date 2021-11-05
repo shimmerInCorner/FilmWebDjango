@@ -8,7 +8,7 @@ class DashboardView(LoginRequiredMixin,View):
     def get(self, request):
         print(request.session)
         greeting = {}
-        greeting['title'] = "Dashboard"
+        greeting['title'] = "Home"
         greeting['pageview'] = "OnlineMovie"        
         return render(request, 'menu/index.html',greeting)
         # return render(request, 'pages/pages-faqs.html', greeting)

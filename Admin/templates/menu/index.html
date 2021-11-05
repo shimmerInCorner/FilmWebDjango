@@ -1,3 +1,39 @@
+{#{% extends 'partials/base.html' %}#}
+{#{% load static %}#}
+{#{% block extra_css %}#}
+{#	<!-- jquery.vectormap css -->#}
+{#	<link href="{% static 'libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css' %}" rel="stylesheet" type="text/css" />#}
+{#	<!-- DataTables -->#}
+{#	<link href="{% static 'libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />#}
+{#	<!-- Responsive datatable examples -->#}
+{#	<link href="{% static 'libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />#}
+{#{% endblock extra_css %}#}
+{##}
+{#{% block content %}#}
+{#{% include "partials/content.html" %}#}
+{#{% endblock content %}#}
+{#{% block extra_javascript %}#}
+{#   <!-- apexcharts -->#}
+{#    <script src="{% static 'libs/apexcharts/apexcharts.min.js' %}"></script>#}
+{##}
+{#    <!-- jquery.vectormap map -->#}
+{#    <script src="{% static 'libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js' %}"></script>#}
+{#    <script src="{% static 'libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-us-merc-en.js' %}"></script>#}
+{##}
+{#    <!-- Required datatable js -->#}
+{#    <script src="{% static 'libs/datatables.net/js/jquery.dataTables.min.js' %}"></script>#}
+{#    <script src="{% static 'libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js' %}"></script>#}
+{##}
+{#    <!-- Responsive examples -->#}
+{#    <script src="{% static 'libs/datatables.net-responsive/js/dataTables.responsive.min.js' %}"></script>#}
+{#    <script src="{% static 'libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js' %}"></script>#}
+{##}
+{#    <script src="{% static 'js/pages/dashboard.init.js' %}"></script>#}
+{##}
+{#{% endblock extra_javascript %}#}
+
+
+
 {% extends 'partials/base.html' %}
 {% load static %}
 {% block extra_css %}
@@ -10,10 +46,95 @@
 {% endblock extra_css %}
 
 {% block content %}
-{% include "partials/content.html" %}
+    <div class="my-2 pt-sm-2">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-10">
+                        <div class="text-center">
+                            <div class="mb-5">
+                                <a href="{% url 'dashboard' %}" class="">
+                                    <img src="{% static 'images/logo-dark.png' %}" alt="" height="20" class="auth-logo logo-dark mx-auto">
+                                    <img src="{% static 'images/logo-light.png' %}" alt="" height="20" class="auth-logo logo-light mx-auto">
+                                </a>
+                            </div>
+
+                            <div class="row justify-content-center">
+                                <div class="col-sm-4">
+                                    <div class="maintenance-img">
+                                        <img src="{% static 'images/maintenance-bg.png' %}" alt="maintenance-bg" class="img-fluid mx-auto d-block">
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 class="mt-5">DSA5101 Project</h3>
+                            <p>OnlineMovie Beta 0.1</p>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="mt-4 maintenance-box">
+                                        <div class="p-3">
+                                            <div class="avatar-sm mx-auto">
+                                                <span class="avatar-title bg-soft-primary rounded-circle">
+                                                    <i class="mdi mdi-access-point-network font-size-24 text-primary"></i>
+                                                </span>
+                                            </div>
+
+                                            <h5 class="font-size-15 text-uppercase mt-4">Team member</h5>
+                                            <p class="text-muted mb-0">Ju Qiaodan A0235984N</p>
+                                            <p class="text-muted mb-0">Xu Shu A0236043N</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="mt-4 maintenance-box">
+                                        <div class="p-3">
+                                            <div class="avatar-sm mx-auto">
+                                                <span class="avatar-title bg-soft-primary rounded-circle">
+                                                    <i class="mdi mdi-clock-outline font-size-24 text-primary"></i>
+                                                </span>
+                                            </div>
+                                            <h5 class="font-size-15 text-uppercase mt-4">Technology Stack</h5>
+                                            <p class="text-muted mb-0">Django</p>
+                                            <p class="text-muted mb-0">Html Javascript</p>
+                                            <p class="text-muted mb-0">JQuery</p>
+                                            <p class="text-muted mb-0">Bootstrap</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="mt-4 maintenance-box">
+                                        <div class="p-3">
+                                            <div class="avatar-sm mx-auto">
+                                                <span class="avatar-title bg-soft-primary rounded-circle">
+                                                    <i class="mdi mdi-email-outline font-size-24 text-primary"></i>
+                                                </span>
+                                            </div>
+                                            <h5 class="font-size-15 text-uppercase mt-4">Further Help</h5>
+                                            <p class="text-muted mb-0">
+                                                <a href="https://github.com/shimmerInCorner/FilmWebDjango" target="_blank"
+                                                    class="text-decoration-underline">Github</a></p>
+                                            <p class="text-muted mb-0">
+                                                <a href="mailto:shimmeradan@gmail.com"
+                                                    class="text-decoration-underline">shimmeradan@gmail.com</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end row -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 {% endblock content %}
 {% block extra_javascript %}
-   <!-- apexcharts -->
+    <script src="{% static 'libs/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'libs/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'libs/metismenu/metisMenu.min.js' %}"></script>
+    <script src="{% static 'libs/simplebar/simplebar.min.js' %}"></script>
+    <script src="{% static 'libs/node-waves/waves.min.js' %}"></script>
+
+    <script src="{% static 'js/app.js' %}"></script>
+    <!-- apexcharts -->
     <script src="{% static 'libs/apexcharts/apexcharts.min.js' %}"></script>
 
     <!-- jquery.vectormap map -->
@@ -23,7 +144,7 @@
     <!-- Required datatable js -->
     <script src="{% static 'libs/datatables.net/js/jquery.dataTables.min.js' %}"></script>
     <script src="{% static 'libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
-    
+
     <!-- Responsive examples -->
     <script src="{% static 'libs/datatables.net-responsive/js/dataTables.responsive.min.js' %}"></script>
     <script src="{% static 'libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js' %}"></script>

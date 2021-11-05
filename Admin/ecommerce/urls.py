@@ -18,5 +18,5 @@ urlpatterns = [
     path('search',views.search),
     re_path(r'^select_tp$',views.select_tp),
     re_path(r'^select_ct$',views.select_ct),
-
+    re_path(r'^select_prc$', views.select_prc),
 ]
