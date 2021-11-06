@@ -56,7 +56,7 @@
                                                         <td>{{movie.type}}</td>
                                                         <td>{{movie.price}}</td>
                                                         <td id="tooltip-container2">
-                                                            <a href="javascript:void(0);" class="me-3 text-primary" data-bs-container="#tooltip-container2" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><i class="mdi mdi-pencil font-size-18"></i></a>
+                                                            <a href="/admin/ecommerce/movie/{{movie.id}}/change/" class="me-3 text-primary" target="_blank" data-bs-container="#tooltip-container2" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><i class="mdi mdi-pencil font-size-18"></i></a>
                                                             <a href="delete?id={{movie.id}}" class="text-danger" data-bs-container="#tooltip-container2" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><i class="mdi mdi-trash-can font-size-18"></i></a>
                                                         </td>
                                                     </tr>
@@ -65,6 +65,40 @@
 
                                                     
                                                 </tbody>
+                                                <div class="row mt-4">
+                                                    <div class="col-sm-6">
+                                                        <div>
+                                                            <p class="mb-sm-0 mt-2">Page <span class="fw-bold">{{ movies.number }}</span> Of <span class="fw-bold">{{ movies.paginator.num_pages }}</span></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="float-sm-end">
+                                                            <ul class="pagination pagination-rounded mb-sm-0">
+                                                                {% if movies.has_previous %}
+                                                                    <li class="page-item active">
+                                                                        <a href="?page={{ movies.previous_page_number }}" class="page-link"><i class="mdi mdi-chevron-left"></i></a>
+                                                                    </li>
+                                                                {%else%}
+                                                                    <li class="page-item disabled">
+                                                                        <a href="#" class="page-link"><i class="mdi mdi-chevron-left"></i></a>
+                                                                    </li>
+                                                                {%endif%}
+                                                                {% for index in movies.paginator.page_range %}
+                                                                    {%if index == movies.number%}
+                                                                        <li class="page-item active" >
+                                                                            <a href="?page={{ index }}" class="page-link">{{ index }}</a>
+                                                                        </li>
+                                                                    {%else%}
+                                                                        <li class="page-item">
+                                                                            <a href="?page={{ index }}" class="page-link">{{ index }}</a>
+                                                                        </li>
+                                                                    {%endif%}
+
+                                                                {% endfor %}
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </table>
                                         </div>
                                     </div>

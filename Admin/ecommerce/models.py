@@ -15,3 +15,5 @@ class Movie(models.Model):
     description = models.CharField(max_length=1000, default='None')
     meta_description = models.CharField(max_length=1000, default='None')
     country = models.CharField(max_length=100, default='Unknown')
+    restriction = models.CharField(max_length=100, default='G')
+

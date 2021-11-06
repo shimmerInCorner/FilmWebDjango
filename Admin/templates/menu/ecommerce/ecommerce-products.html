@@ -29,7 +29,7 @@
                                                         <li><a href="select_ct?country={{ 'China' }}"><i class="mdi mdi-circle-medium me-1"></i> China</a></li>
                                                         <li><a href="select_ct?country={{ 'Japan' }}"><i class="mdi mdi-circle-medium me-1"></i> Japan</a></li>
                                                         <li><a href="select_ct?country={{ 'Britain' }}"><i class="mdi mdi-circle-medium me-1"></i> Britain</a></li>
-                                                        <li><a href="select_ct?country={{ 'Korea' }}"><i class="mdi mdi-circle-medium me-1"></i> Korea</a></li>
+                                                        <li><a href="select_ct?country={{ 'Korea (South)' }}"><i class="mdi mdi-circle-medium me-1"></i> Korea (South)</a></li>
                                                         <li><a href="select_ct?country={{ 'Thailand' }}"><i class="mdi mdi-circle-medium me-1"></i> Thailand</a></li>
                                                         <li><a href="select_ct?country={{ 'Canada' }}"><i class="mdi mdi-circle-medium me-1"></i> Canada</a></li>
                                                         <li><a href="select_ct?country={{ 'Germany' }}"><i class="mdi mdi-circle-medium me-1"></i> Germany</a></li>
@@ -144,28 +144,33 @@
 
                                             <div class="row g-0">
                                                 {% for movie in movies %}
-
                                                     <div class="col-xl-4 col-sm-6">
+
                                                         <div class="product-box">
                                                             <div class="product-img">
                                                                 <div class="product-ribbon badge bg-warning">
                                                                     Duration: {{movie.duration}} min
                                                                 </div>
+
                                                                 <div class="product-like">
                                                                     <a href="#">
                                                                         <i class="mdi mdi-heart">{{movie.grade}}</i>
                                                                     </a>
                                                                 </div>
-                                                                <img src="{{movie.img_url}}" alt="img-1" class="img-fluid mx-auto d-block">
+                                                                <a href="{{movie.watch_url}}" target="_blank">
+                                                                    <img src="{{movie.img_url}}" alt="img-1" class="img-fluid mx-auto d-block">
+                                                                </a>
                                                             </div>
 
                                                             <div class="text-center">
-                                                                <p class="font-size-12 mb-1">{{movie.country}}</p>
+                                                                <p class="font-size-12 mb-1">{{movie.country}} ({{movie.restriction}})</p>
                                                                 <h5 class="font-size-15"><a href="#" class="text-dark">{{movie.name}}</a></h5>
                                                                 <h5 class="mt-3 mb-0">SGD$ {{movie.price}}</h5>
                                                             </div>
                                                         </div>
+
                                                     </div>
+
                                                 {% endfor %}
 
 
@@ -180,16 +185,16 @@
                                                 <div class="col-sm-6">
                                                     <div class="float-sm-end">
                                                         <ul class="pagination pagination-rounded mb-sm-0">
+                                                            {% if movies.has_previous %}
+                                                                <li class="page-item active">
+                                                                    <a href="?page={{ movies.previous_page_number }}" class="page-link"><i class="mdi mdi-chevron-left"></i></a>
+                                                                </li>
+                                                            {%else%}
+                                                                <li class="page-item disabled">
+                                                                    <a href="#" class="page-link"><i class="mdi mdi-chevron-left"></i></a>
+                                                                </li>
+                                                            {%endif%}
                                                             {% for index in movies.paginator.page_range %}
-                                                                {% if movies.has_previous %}
-                                                                    <li class="page-item active">
-                                                                        <a href="#" class="page-link"><i class="mdi mdi-chevron-left"></i></a>
-                                                                    </li>
-                                                                {%else%}
-                                                                    <li class="page-item disabled">
-                                                                        <a href="#" class="page-link"><i class="mdi mdi-chevron-left"></i></a>
-                                                                    </li>
-                                                                {%endif%}
                                                                 {%if index == movies.number%}
                                                                     <li class="page-item active" >
                                                                         <a href="?page={{ index }}" class="page-link">{{ index }}</a>

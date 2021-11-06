@@ -9,9 +9,9 @@ from django.views.decorators.csrf import csrf_exempt
 @csrf_exempt
 def movie_page(request):
 
-    all_movies = Movie.objects.all()  # select all movies in database
+    all_movies = Movie.objects.all().order_by("-id")  # select all movies in database
 
-    paginator = Paginator(all_movies, 8)
+    paginator = Paginator(all_movies, 9)
 
     if request.method == "GET":
         page = request.GET.get('page')
@@ -23,15 +23,14 @@ def movie_page(request):
             return HttpResponse('404')
         except EmptyPage:
             movies = paginator.page(paginator.num_pages)
-
     return render(request,'menu/ecommerce/ecommerce-customers.html',{'movies':movies})
 
 @csrf_exempt
 def movie_list_home(request):
 
-    all_movies = Movie.objects.all()  # select all movies in database
+    all_movies = Movie.objects.all().order_by("-id")   # select all movies in database
 
-    paginator = Paginator(all_movies, 8)
+    paginator = Paginator(all_movies, 9)
 
     if request.method == "GET":
         page = request.GET.get('page')
@@ -58,7 +57,7 @@ def delete(request):
 def select(request):
     select_id = request.GET.get('id')
     all_movies = Movie.objects.filter(id=select_id)
-    paginator = Paginator(all_movies, 8)
+    paginator = Paginator(all_movies, 9)
     if request.method == "GET":
         page = request.GET.get('page')
         try:
@@ -76,7 +75,7 @@ def select(request):
 def select_tp(request):
     select_type = request.GET.get('type')
     all_movies = Movie.objects.filter(type__icontains=select_type)
-    paginator = Paginator(all_movies, 8)
+    paginator = Paginator(all_movies, 9)
     if request.method == "GET":
         page = request.GET.get('page')
         try:
@@ -94,7 +93,7 @@ def select_tp(request):
 def select_ct(request):
     select_country = request.GET.get('country')
     all_movies = Movie.objects.filter(country__icontains=select_country)
-    paginator = Paginator(all_movies, 8)
+    paginator = Paginator(all_movies, 9)
     if request.method == "GET":
         page = request.GET.get('page')
         try:
@@ -113,7 +112,7 @@ def select_prc(request):
     select_minPrice = request.GET.get('minPrice')
     select_maxPrice = request.GET.get('maxPrice')
     all_movies = Movie.objects.filter(price__range=(select_minPrice, select_maxPrice))
-    paginator = Paginator(all_movies, 8)
+    paginator = Paginator(all_movies, 9)
     if request.method == "GET":
         page = request.GET.get('page')
         try:
@@ -140,14 +139,14 @@ def add(request):
                              type=new_item['category'],watch_url=new_item['watch_url'],
                              price=new_item['price'],features=new_item['features'],
                              description=new_item['productdesc'],meta_description=new_item['metadescription'],
-                             country=new_item['country'],)
+                             country=new_item['country'],restriction=new_item['restriction'],)
 
         return HttpResponseRedirect('/about-us/movie_manage')
 
 def search(request):
     movie_name = request.GET.get('movie_name')
     all_movies = Movie.objects.filter(name__icontains=movie_name)
-    paginator = Paginator(all_movies, 8)
+    paginator = Paginator(all_movies, 9)
     if request.method == "GET":
         page = request.GET.get('page')
         try:
