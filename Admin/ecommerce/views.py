@@ -216,7 +216,7 @@ class ShopsView(LoginRequiredMixin,View):
         greeting['pageview'] = "Ecommerce"        
         return render(request, 'menu/ecommerce/ecommerce-shops.html',greeting)
 
-# Add Product
+# Add Movie
 class AddProductView(LoginRequiredMixin,View):
     def get(self, request):
         greeting = {}
